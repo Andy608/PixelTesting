@@ -9,5 +9,10 @@
     "location": "C:\\Users\\Andrew\\Desktop\\Programs\\PixelTesting\\PixelTest\\src",
     "status": "UNRESOLVED",
     "error": "No class path info available for \u0027C:\\Users\\Andrew\\Desktop\\Programs\\PixelTesting\\PixelTest\\src\u0027. Skipped."
+  },
+  "C:\\Users\\Andrew\\Desktop\\Programs\\PixelTesting\\ImageManipulation\\src": {
+    "location": "C:\\Users\\Andrew\\Desktop\\Programs\\PixelTesting\\ImageManipulation\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\Users\\Andrew\\Desktop\\Programs\\PixelTesting\\ImageManipulation\\src\u0027. Skipped."
   }
 }

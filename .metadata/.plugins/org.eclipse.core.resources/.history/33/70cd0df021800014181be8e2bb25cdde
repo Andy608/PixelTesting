@@ -23,9 +23,9 @@ public class EpicDisplay extends PixelContainer {
 	public void render(Graphics g, Loop time) {
 		clear();
 		int x = 0, y = 0;
-		for (int i = 0; i < 70; i++) {
-			x = (int) ((Math.sin(((time.getTime() + i) * 50) / 4000.0 * (Math.PI / 6)) * 75));
-			y = (int) ((Math.cos(((time.getTime() - i) * 50) / 4000.0 * (3 * Math.PI / 2)) * 40));
+		for (int i = 0; i < 10; i++) {
+			x = (int) ((Math.sin(((time.getTime() + i) * 30) / 4000.0 * (Math.PI / 6)) * 75));
+			y = (int) ((Math.cos(((time.getTime() + i) * 30) / 4000.0 * (Math.PI / 6)) * 40));
 			
 			formatPixels(container, (this.width - 20) / 2 + x, (this.height - 25) / 2 + y);
 		}
