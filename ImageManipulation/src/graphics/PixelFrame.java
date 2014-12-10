@@ -1,0 +1,36 @@
+package graphics;
+
+import java.awt.Dimension;
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
+
+import core.Loop;
+
+public class PixelFrame extends JFrame{
+
+	private static final long serialVersionUID = 7195384405114123587L;
+	private static Dimension minimumSize = new Dimension((int)DisplayManager.getScreenSize().getWidth() / 2, (int)DisplayManager.getScreenSize().getHeight() / 2);
+	
+	public PixelFrame(PixelCanvas pc) {
+		this.setTitle("Pixel Testing!");
+		this.add(pc);
+		this.setExtendedState(JFrame.MAXIMIZED_BOTH | this.getExtendedState());
+		this.setResizable(true);
+		this.setMinimumSize(new Dimension(minimumSize));
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.pack();
+		this.setLocationRelativeTo(null);
+		this.setVisible(true);
+	}
+	
+	@Override
+	public void paint(Graphics g) {
+		if (Loop.getGame() == null) {
+			return;
+		}
+		DisplayManager.setFrameWidth(Loop.getGame().getCanvas().getWidth());
+	}
+	
+	
+}

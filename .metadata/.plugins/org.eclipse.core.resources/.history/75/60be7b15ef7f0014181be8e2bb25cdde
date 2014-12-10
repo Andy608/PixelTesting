@@ -1,0 +1,23 @@
+package graphics;
+
+import java.awt.Canvas;
+import java.awt.Dimension;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+
+public class PixelCanvas extends Canvas {
+
+	private static final long serialVersionUID = 3186557580516093308L;
+	private static final int SCALE = 5;
+	
+	private static final int WIDTH = (DisplayManager.getScreenSize().getWidth() / 2);
+	private static final int HEIGHT = DisplayManager.getScreenSize() / 2;
+	
+	public PixelCanvas() {
+		this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
+		this.setMinimumSize(new Dimension(WIDTH, HEIGHT));
+	}
+	
+	
+	
+}

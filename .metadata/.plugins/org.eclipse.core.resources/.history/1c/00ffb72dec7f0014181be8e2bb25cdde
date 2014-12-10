@@ -1,0 +1,22 @@
+package graphics;
+
+import java.awt.Dimension;
+
+import javax.swing.JFrame;
+
+public class PixelFrame extends JFrame{
+
+	private static final long serialVersionUID = 7195384405114123587L;
+	private static final int SCALE = 5;
+	private static final int WIDTH = 1000 / SCALE;
+	private static final int HEIGHT = 1000 / SCALE;
+	
+	public PixelFrame() {
+		this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
+		this.setMinimumSize(new Dimension(WIDTH, HEIGHT))''
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	
+	
+}

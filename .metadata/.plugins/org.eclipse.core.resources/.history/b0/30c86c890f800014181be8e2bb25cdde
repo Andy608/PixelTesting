@@ -1,0 +1,27 @@
+package core;
+
+import graphics.PixelCanvas;
+import graphics.PixelFrame;
+
+import java.awt.EventQueue;
+
+public class Main {
+	private static PixelCanvas canvasInstance;
+	private static PixelFrame frameInstance;
+	
+	public static void main(String[] args) {
+		
+		EventQueue.invokeLater(new Runnable() {
+			
+			@Override
+			public void run() {
+				Loop.gameInstance = new Loop();
+				frameInstance = new PixelFrame();
+				canvasInstance = new PixelCanvas();
+				Loop.getGame().setCanvas(canvasInstance);
+				Loop.getGame().setFrame(frameInstance);
+				Loop.getGame().start();
+			}
+		});
+	}
+}

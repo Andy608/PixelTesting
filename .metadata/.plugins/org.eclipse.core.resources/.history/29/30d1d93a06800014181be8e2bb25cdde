@@ -1,0 +1,13 @@
+package graphics;
+
+public class PixelDisplay extends PixelManager {
+
+	private PixelManager test;
+	
+	public PixelDisplay(int w, int h) {
+		super(w, h);
+		
+		
+	}
+	
+}

@@ -1,0 +1,17 @@
+package com.dreamstone.gui;
+
+public class PixelContainer {
+	
+	private int width;
+	private int height;
+	public int pixels[];
+	
+	public PixelContainer(int w, int h) {
+		this.width = w;
+		this.height = h;
+		this.pixels = new int[w * h];
+		
+		
+	}
+	
+}

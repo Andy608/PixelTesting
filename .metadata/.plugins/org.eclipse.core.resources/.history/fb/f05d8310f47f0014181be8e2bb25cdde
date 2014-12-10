@@ -1,0 +1,11 @@
+package graphics;
+
+public class Screen {
+
+	
+	
+	public Screen() {
+		
+	}
+	
+}

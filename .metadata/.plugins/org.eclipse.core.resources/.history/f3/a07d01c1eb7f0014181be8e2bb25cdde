@@ -1,0 +1,16 @@
+package graphics;
+
+import javax.swing.JFrame;
+
+public class PixelFrame extends JFrame{
+	
+	private static int width = 1000;
+	private static int height = 1000;
+	
+	public PixelFrame() {
+		this.setPreferredSize(arg0)
+		
+		
+	}
+	
+}

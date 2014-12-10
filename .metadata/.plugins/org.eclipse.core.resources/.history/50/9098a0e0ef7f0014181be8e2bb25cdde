@@ -1,0 +1,24 @@
+package core;
+
+import graphics.PixelFrame;
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+
+public class Main {
+	private static DystopiaCanvas canvasInstance = new DystopiaCanvas();
+	private static DystopiaFrame frameInstance = new DystopiaFrame(canvasInstance);
+	
+	public static void main(String[] args) {
+		LaunchHandler.processArguments(args);
+		
+		EventQueue.invokeLater(new Runnable() {
+			
+			@Override
+			public void run() {
+				Dystopia.gameInstance = new Dystopia();
+				Dystopia.getGame().setCanvas(canvasInstance);
+				Dystopia.getGame().setFrame(frameInstance);
+				Dystopia.getGame().start();
+			}
+		});
+}

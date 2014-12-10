@@ -1,0 +1,27 @@
+package graphics;
+
+import java.awt.Dimension;
+
+import javax.swing.JFrame;
+
+public class PixelFrame extends JFrame{
+
+	private static final long serialVersionUID = 7195384405114123587L;
+	private static PixelCanvas pc = new PixelCanvas();
+	private static Dimension bounds = new Dimension((int)(pc.getMinimumSize().getWidth()), (int)(pc.getMinimumSize().getHeight()));
+	
+	public PixelFrame() {
+		this.setTitle("Dystopia");
+		this.add(DystopiaInstance);
+		this.setExtendedState(JFrame.MAXIMIZED_BOTH | this.getExtendedState());
+		this.setResizable(true);
+		this.setMinimumSize(minimumSize);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.pack();
+		this.setLocationRelativeTo(null);
+		this.setVisible(true);
+	}
+	
+	
+	
+}

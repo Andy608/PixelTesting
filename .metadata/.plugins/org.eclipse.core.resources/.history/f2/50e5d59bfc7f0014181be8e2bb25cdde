@@ -1,0 +1,16 @@
+package graphics;
+
+import java.awt.image.BufferedImage;
+
+import javax.imageio.ImageIO;
+
+public class Screen {
+
+	private BufferedImage image;
+	private final String imagePath = ""
+	
+	public Screen() {
+		image = ImageIO.read(input)
+	}
+	
+}

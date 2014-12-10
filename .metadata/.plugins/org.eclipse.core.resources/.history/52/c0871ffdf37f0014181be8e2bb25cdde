@@ -1,0 +1,9 @@
+package graphics;
+
+public class Screen extends ImageConverter {
+
+	public Screen() {
+		
+	}
+	
+}

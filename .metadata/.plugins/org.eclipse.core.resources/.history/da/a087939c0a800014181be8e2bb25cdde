@@ -1,0 +1,64 @@
+package graphics;
+
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Toolkit;
+import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferInt;
+
+import core.Loop;
+
+public class PixelCanvas extends Canvas {
+
+	private static final long serialVersionUID = 3186557580516093308L;
+	private EpicDisplay display;
+	private BufferedImage img;
+	private int pixels[];
+	
+	public PixelCanvas() {
+		//DisplayManager.setScale(10);
+		img = new BufferedImage(DisplayManager.getWidth(), DisplayManager.getHeight(), BufferedImage.TYPE_INT_RGB);
+		display = new EpicDisplay(DisplayManager.getWidth(), DisplayManager.getHeight());
+		pixels = ((DataBufferInt)img.getRaster().getDataBuffer()).getData();
+		Toolkit.getDefaultToolkit().setDynamicLayout(false);
+	}
+	
+	
+	public void render() {
+	
+		BufferStrategy bs = this.getBufferStrategy();
+		
+		if (bs == null) {
+			this.createBufferStrategy(3);
+			this.requestFocus();
+			return;
+		}
+		
+		Graphics g = bs.getDrawGraphics();
+		g.setColor(Color.BLACK);
+		g.fillRect(0, 0, DisplayManager.getWidth(), DisplayManager.getHeight());
+		
+		display.render(Loop.getGame());
+		
+		for (int i = 0; i < img.getWidth() * img.getHeight(); i++) {
+			pixels[i] = display.pixels[i];
+		}
+		
+		g.drawImage(img, 0, 0, img.getWidth() * DisplayManager.getScale(), img.getHeight() * DisplayManager.getScale(), null);
+		
+		
+		g.dispose();
+		bs.show();
+	}
+	
+	@Override
+	public void paint(Graphics g) {
+		if (Loop.getGame() == null) {
+			return;
+		}
+		DisplayManager.setWidth(Loop.getGame().getFrame().getWidth());
+		DisplayManager.setHeight(Loop.getGame().getFrame().getHeight());
+	}
+}

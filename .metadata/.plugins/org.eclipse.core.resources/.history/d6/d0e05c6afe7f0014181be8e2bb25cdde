@@ -1,0 +1,16 @@
+package graphics;
+
+import java.awt.image.BufferedImage;
+
+public class ImageConverter {
+
+	private BufferedImage picture;
+	private int rows;
+	private int columns;
+	private int[] pixels;
+	
+	public static int[] convertImage(BufferedImage image) {
+		return pixels;
+	}
+	
+}

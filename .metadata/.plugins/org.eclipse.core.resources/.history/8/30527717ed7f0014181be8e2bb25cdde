@@ -1,0 +1,19 @@
+package graphics;
+
+import java.awt.Dimension;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+
+import javax.swing.JFrame;
+
+public class PixelFrame extends JFrame{
+
+	private static final long serialVersionUID = 7195384405114123587L;
+	
+	public PixelFrame() {
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	
+	
+}

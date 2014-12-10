@@ -1,0 +1,42 @@
+package graphics;
+
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
+public class ImageConverter {
+
+	private BufferedImage picture;
+	private int rows;
+	private int columns;
+	private int[] pixels;
+	
+	public ImageConverter(File filePath) {
+		try {
+			this.picture = ImageIO.read(filePath);	
+		} catch(Exception e) {
+			System.out.println("ERROR! Could not file image. File path is corrupt: " + filePath);
+			e.printStackTrace();
+		}
+		
+		this.rows = picture.getWidth();
+		this.columns = picture.getHeight();
+		this.pixels = new int[this.rows * this.columns];
+		convertImage();
+	}
+	
+	public static void convertImage(File filePath) {
+		try {
+			this.picture = ImageIO.read(filePath);	
+		} catch(Exception e) {
+			System.out.println("ERROR! Could not file image. File path is corrupt: " + filePath);
+			e.printStackTrace();
+		}
+		
+		this.rows = picture.getWidth();
+		this.columns = picture.getHeight();
+		this.pixels = new int[this.rows * this.columns];
+	}
+	
+}

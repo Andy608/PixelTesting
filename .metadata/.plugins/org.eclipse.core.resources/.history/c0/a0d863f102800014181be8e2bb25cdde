@@ -1,0 +1,47 @@
+package graphics;
+
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
+public class ImageConverter {
+
+	private static BufferedImage picture;
+	private static int rows;
+	private static int columns;
+	private static int[] pixels;
+	
+	public static int[] convertImage(File filePath) {
+		try {
+			picture = ImageIO.read(filePath);	
+		} catch(Exception e) {
+			System.out.println("ERROR! Could not file image. File path is corrupt: " + filePath);
+			e.printStackTrace();
+		}
+		
+		rows = picture.getWidth();
+		columns = picture.getHeight();
+		
+		//pixels = new int[rows * columns];
+		
+		for (int y = 0; y < picture.getHeight(); y++) {
+			for (int x = 0; x < picture.getWidth(); x++) {
+				
+				pixels[x + y * picture.getWidth()] = getRGB(picture, x, y);
+			}
+		}
+		return pixels;
+	}
+	
+	private static int getRGB(BufferedImage img, int x, int y) {
+		int color;
+		int[] argb = ((DataBufferInt)picture.getRaster().getDataBuffer()).getData();
+		
+		color = argb << 16 & 0xff;
+		color += argb << 8 & 0xff;
+		color += argb & 0xff;
+		return color;
+	}
+	
+}

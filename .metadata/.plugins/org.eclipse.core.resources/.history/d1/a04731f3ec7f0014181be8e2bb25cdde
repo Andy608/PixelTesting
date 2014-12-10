@@ -1,0 +1,11 @@
+package graphics;
+
+import java.awt.Canvas;
+
+public class PixelCanvas extends Canvas {
+
+	public PixelCanvas() {
+		
+	}
+	
+}

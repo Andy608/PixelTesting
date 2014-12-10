@@ -1,0 +1,11 @@
+package graphics;
+
+import javax.swing.JFrame;
+
+public class PixelFrame extends JFrame{
+	
+	public PixelFrame() {
+		
+	}
+	
+}

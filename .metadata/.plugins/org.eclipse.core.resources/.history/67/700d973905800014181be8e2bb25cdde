@@ -1,0 +1,19 @@
+package graphics;
+
+public class PixelManager {
+
+	public final int width;
+	public final int height;
+	public final int[] pixels;
+	
+	public PixelManager(int w, int h) {
+		this.width = w;
+		this.height = h;
+		this.pixels = new int[width * height];
+	}
+	
+	public void formatPixels(PixelManager pixels, int xOffset, int yOffset) {
+		
+	}
+	
+}

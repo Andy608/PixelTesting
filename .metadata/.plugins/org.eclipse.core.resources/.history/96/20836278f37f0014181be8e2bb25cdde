@@ -1,0 +1,12 @@
+package graphics;
+
+public class ImageConverter {
+
+	public int width;
+	public int height;
+	public int[] pixels;
+	
+	public ImageConverter() {
+		
+	}
+}

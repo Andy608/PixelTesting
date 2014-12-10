@@ -1,0 +1,20 @@
+package graphics;
+
+import java.awt.image.BufferedImage;
+
+public class ImageConverter {
+
+	public BufferedImage picture;
+	public int rows;
+	public int columns;
+	public int[] pixels;
+	
+	public ImageConverter(BufferedImage image) {
+		this.picture = image;
+		this.rows = image.getWidth();
+		this.columns = image.getHeight();
+		this.pixels = new int[this.rows * this.columns];
+	}
+	
+	
+}

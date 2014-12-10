@@ -1,0 +1,26 @@
+package graphics;
+
+import java.awt.Dimension;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+
+import javax.swing.JFrame;
+
+public class PixelFrame extends JFrame{
+
+	private static final long serialVersionUID = 7195384405114123587L;
+	private static final int SCALE = 5;
+	private static GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+	
+	private static final int WIDTH = gd.getDisplayMode().getWidth() * SCALE / SCALE;
+	private static final int HEIGHT = gd.getDisplayMode().getHeight() / SCALE;
+	
+	public PixelFrame() {
+		this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
+		this.setMinimumSize(new Dimension(WIDTH, HEIGHT));
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	
+	
+}

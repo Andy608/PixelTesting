@@ -1,0 +1,29 @@
+package graphics;
+
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
+import file.FileSystem;
+
+public class Screen {
+
+	private BufferedImage image;
+	private final File imagePath;
+	private int[] pixels;
+	
+	public Screen() {
+		pixels = ImageConverter.convertImage(imagePath);
+		
+		pixels = ImageConverter.convertImage(image);
+	}
+	
+	public void render() {
+		
+		
+		
+	}
+	
+}

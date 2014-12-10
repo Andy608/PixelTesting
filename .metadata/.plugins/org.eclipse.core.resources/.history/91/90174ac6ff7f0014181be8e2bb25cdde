@@ -1,0 +1,34 @@
+package graphics;
+
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
+public class ImageConverter {
+
+	private BufferedImage picture;
+	private int rows;
+	private int columns;
+	private int[] pixels;
+	
+	public ImageConverter(File filePath) {
+		try {
+			this.picture = ImageIO.read(filePath);	
+		} catch(Exceptio e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		this.rows = image.getWidth();
+		this.columns = image.getHeight();
+		this.pixels = new int[this.rows * this.columns];
+	}
+	
+	
+	public void convertImage(BufferedImage image) {
+		
+	}
+	
+}

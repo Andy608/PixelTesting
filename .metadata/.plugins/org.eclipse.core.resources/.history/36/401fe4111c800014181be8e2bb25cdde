@@ -1,0 +1,42 @@
+package graphics;
+
+import java.awt.Graphics;
+import java.util.Random;
+
+import core.Loop;
+
+public class EpicDisplay extends PixelContainer {
+	
+	private PixelContainer container;
+	private Random rand = new Random();
+	
+	public EpicDisplay(int w, int h) {
+		super(w, h);
+		
+		container = new PixelContainer(20, 20);
+		
+		for (int i = 0; i < 20 * 20; i++) {
+			container.pixels[i] = rand.nextInt() * (rand.nextInt(10) / 9);
+		}
+	}
+	
+	public void render(Graphics g, Loop time) {
+		//int x = (DisplayManager.getFrameWidth() - img.getWidth()) / 2;
+		//System.out.println(x);
+		clear();
+		
+		for (int i = 0; i < 100; i++) {
+			int x = (int)((Math.sin(((time.getTime() + i) * 300) / 4000.0 * (Math.PI / 6)) * 90));
+		}
+		
+		//System.out.println(width + " - " + x);
+		formatPixels(container, (this.width - 20) / 2 + x, 0);
+	}
+	
+	public void clear() {
+		System.out.println("LOL");
+		for (int i = 0; i < pixels.length; i++) {
+			pixels[i] = 0;
+		}
+	}
+}

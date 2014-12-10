@@ -1,0 +1,3 @@
+INDEX VERSION 1.126+C:\Users\Andrew\Desktop\Programs\PixelTesting\.metadata\.plugins\org.eclipse.jdt.core
+2132893841.index
+3222706478.index
